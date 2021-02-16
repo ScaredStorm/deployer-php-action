@@ -17,6 +17,8 @@ export default async (options: DeployerOptions): Promise<void> => {
         ? `deployer/recipes`
         : '';
 
+    console.log(deployerPackage, recipesPackage);
+
     await execa('composer', ['global', 'require', deployerPackage, recipesPackage]);
 
     const installPath = (await execa('composer', ['global', 'config', 'home'])).stdout;

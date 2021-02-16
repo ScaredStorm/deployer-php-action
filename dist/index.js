@@ -8107,6 +8107,7 @@ exports.default = async (options) => {
     const recipesPackage = options.deployerRecipes
         ? `deployer/recipes`
         : '';
+    console.log(deployerPackage, recipesPackage);
     await execa('composer', ['global', 'require', deployerPackage, recipesPackage]);
     const installPath = (await execa('composer', ['global', 'config', 'home'])).stdout;
     core.addPath(`${installPath}/vendor/bin`);
