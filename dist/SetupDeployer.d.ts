@@ -1,6 +1,6 @@
 interface DeployerOptions {
     deployerVersion?: string;
-    deployerRecipesVersion?: string;
+    deployerRecipes?: boolean;
     skipDeployerInstall?: string;
 }
 declare const _default: (options: DeployerOptions) => Promise<void>;
